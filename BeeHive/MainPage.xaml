@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BeeHive.MainPage"
+             Shell.NavBarIsVisible="false">
+
+    <ScrollView>
+        <Grid Margin="20" ColumnSpacing="20" MinimumHeightRequest="400">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="3*" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+            <Label x:Name="Assigments" Grid.Row="0" Grid.Column="0" Text="Job Assigment" FontSize="Large"/>
+            <Border Grid.Row="1" Grid.Column="0" Padding="10" Margin="0,0,0,20">
+                <VerticalStackLayout Grid.Row="1" Grid.Column="0"  Spacing="10">
+                    <Label x:Name="Picker" Text="Bee jobs"/>
+                    <Picker x:Name="JobPicker" Title="Select a job for bee" Margin="0,0,0,20" FontSize="Medium"/>
+
+                    <Button x:Name="AssignJobButton" Clicked="AssignJobButton_Clicked"  Text="Assign this job" Margin="0,5,0,0" FontSize="Medium" />
+                </VerticalStackLayout>
+            </Border>
+            <Button x:Name="WorkShiftButton" Clicked="WorkShiftButton_Clicked" FontSize="Large" Grid.Row="2" Grid.Column="0"  Text="Start the shift"/>
+            <Button x:Name="OutOfHoneyButton" FontSize="Large" Grid.Row="2" Grid.Column="0" BackgroundColor="Red" IsVisible="False" Clicked="OutOfHoneyButton_Clicked" Text="The hive is out of honey"/>
+        
+        
+            <!-- Right side-->
+            <Label x:Name="Report" Grid.Row="0" Grid.Column="1" Text="Queen's report" FontSize="Large"/>
+            <Label x:Name="StatusReport" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" BackgroundColor="Black" FontSize="Medium" Text="The testing space" TextColor="Yellow"
+                   Padding="10" VerticalOptions="FillAndExpand"/>
+
+        </Grid>
+        
+        
+        
+    </ScrollView>
+
+</ContentPage>
